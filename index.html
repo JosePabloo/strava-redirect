@@ -22,15 +22,16 @@
 <p class="p1">&lt;body&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Redirecting...&lt;/h3&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const params = new URLSearchParams(window.location.search);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const authCode = params.get("code");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener("DOMContentLoaded", function () {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const params = new URLSearchParams(window.location.search);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const authCode = params.get("code");</p>
 <p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (authCode) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Redirect to your mobile app using deep linking</p>
-<p class="p1"><span class="Apple-converted-space">            </span>window.location.href = `myrunners://exchange_token?code=${authCode}`;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.body.innerHTML = "&lt;h3&gt;Authorization failed&lt;/h3&gt;";</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (authCode) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>window.location.href = `myrunners://exchange_token?code=${authCode}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.body.innerHTML = "&lt;h3&gt;Authorization failed&lt;/h3&gt;";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
 <p class="p1">&lt;/body&gt;</p>
 <p class="p1">&lt;/html&gt;</p>
